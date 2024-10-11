@@ -45,6 +45,34 @@
     pulse.enable = true;
   };
 
+  # Install fonts.
+  fonts = {
+    packages = with pkgs; [
+      # Icon fonts.
+      material-design-icons
+
+      # Normal fonts.
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+
+      # Nerdfonts.
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    ];
+
+    # Only install the specified fonts.
+    enableDefaultPackages = false;
+
+    # Set the default fonts.
+    fontconfig.defaultFonts = {
+      serif = ["Noto Serif" "Noto Color Emoji"];
+      sansSerif = ["Noto Sans" "Noto Color Emoji"];
+      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      emoji = ["Noto Color Emoji"];
+    };
+  };
+
+
   # Install `polkit`.
   security.polkit.enable = true;
 
