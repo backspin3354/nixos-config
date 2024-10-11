@@ -30,6 +30,11 @@
     ];
   };
 
+  # Set environment variables on login.
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = 1; # Lets electron apps run on wayland.
+  };
+
   # Enable sound with pipewire.
   services.pipewire = {
     enable = true;
