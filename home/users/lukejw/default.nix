@@ -3,7 +3,10 @@
 {
   imports = [
     ../../sway
+    
     ../../programs/firefox
+    
+    ../../themes/gruvbox
   ];
 
   programs.btop.enable = true;
