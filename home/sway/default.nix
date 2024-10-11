@@ -4,11 +4,6 @@
   programs.foot = {
     enable = true;
     server.enable = true;
-    settings = {
-      main = {
-        font = "monospace:size=10";
-      };
-    };
   };
   
   programs.tofi.enable = true;

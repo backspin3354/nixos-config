@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../nixos/sway.nix
+    ../../nixos/sway
     ./hardware-configuration.nix
   ];
 

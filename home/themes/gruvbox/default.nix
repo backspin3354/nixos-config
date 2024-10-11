@@ -31,6 +31,9 @@
   
   # Foot
   programs.foot.settings = {
+    main = {
+      font = "monospace:size=10";
+    };
     colors = {
       alpha = 0.8;
       background = "1d2021";

@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../../sway
+    ../../sway # Load default sway config.
     
-    ../../programs/firefox
+    ../../programs/firefox # Load default firefox config.
     
-    ../../themes/gruvbox
+    ../../themes/gruvbox # Load some config for theming.
   ];
 
   programs.btop.enable = true;

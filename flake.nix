@@ -34,7 +34,7 @@
               inherit system;
 
               modules = [
-                ./.
+                ./nixos
                 ./hosts/${host}
                 {
                   networking.hostName = hostname;

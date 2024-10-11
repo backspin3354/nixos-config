@@ -4,6 +4,7 @@
   # Use tuigreet as the session manager.
   services.greetd = {
     enable = true;
+    vt = 2;
     settings = {
       default_session.command = ''
         ${pkgs.greetd.tuigreet}/bin/tuigreet \
@@ -26,7 +27,6 @@
     };
     extraPackages = with pkgs; [
       foot
-      tofi
     ];
   };
 
