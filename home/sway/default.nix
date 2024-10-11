@@ -15,7 +15,7 @@
       defaultWorkspace = "workspace number 1";
       modifier = "Mod4";
       terminal = "footclient";
-      menu = "tofi-drun | xargs swaymsg exec --";
+      menu = "tofi-drun --terminal foot | xargs swaymsg exec --";
     };
   };
 }
