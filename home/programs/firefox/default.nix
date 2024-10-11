@@ -5,9 +5,26 @@
     enable = true;
     package = pkgs.firefox-wayland;
     policies = {
-      DisablePocket = true;
-      OfferToSaveLogins = false;
-      Homepage.StartPage = "homepage-locked";
+      DisablePocket = true; # Disable the built-in "Pocket" extension.
+      OfferToSaveLogins = false; # Disable built-in password manager.
+      Homepage.StartPage = "homepage-locked"; # Always open to the homepage.
+
+      # Clear all of these things on shutdown.
+      SanitizeOnShutdown = {
+        Cookies = true;
+        History = true;
+        Sessions = true;
+        Locked = true; # Don't allow the user to change these settings.
+      };
+      
+      # Customize the homepage.
+      FirefoxHome = {
+        TopSites = false; # Disable top sites.
+        SponsoredTopSites = false; # Disable sponsored sites.
+        Locked = true; # Don't allow modifying the homepage.
+      };
+
+      # Install extensions.
       ExtensionSettings = let
         extension = shortId: uuid: {
           name = uuid;
