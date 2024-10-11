@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ../../sway # Import the default sway config.
+    ../../sway
+    ../../programs/firefox
   ];
 
   programs.btop.enable = true;
