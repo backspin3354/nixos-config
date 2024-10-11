@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  imports = [
+    ../../sway # Import the default sway config.
+  ];
+
   programs.btop.enable = true;
 
   programs.git = {
@@ -15,4 +19,9 @@
       lsp.display-messages = true;
     };
   };
+
+  home.packages = with pkgs; [
+    github-desktop
+    aseprite
+  ];
 }

@@ -1,2 +1,2 @@
 # nixos-config
- My personal NixOS configuration flake.
+My personal NixOS configuration flake.

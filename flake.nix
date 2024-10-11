@@ -41,7 +41,7 @@
                 }
                 {
                   # Generate a NixOS user for every configuration in `./home/users`.
-                  user.users = builtins.listToAttrs (
+                  users.users = builtins.listToAttrs (
                     builtins.map (user: {
                       name = user;
                       value = {
@@ -77,11 +77,11 @@
                         };
                       }) users
                     );
-                  };
 
-                  # Give the `home-manager` configurations access to `inputs` as well as additional variables.
-                  extraSpecialArgs = inputs // {
-                    inherit system host;
+                    # Give the `home-manager` configurations access to `inputs` as well as additional variables.
+                    extraSpecialArgs = inputs // {
+                      inherit system host;
+                    };
                   };
                 }
               ];
