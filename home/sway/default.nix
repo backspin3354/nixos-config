@@ -5,7 +5,7 @@
     enable = true;
     server.enable = true;
   };
-  
+
   programs.tofi.enable = true;
 
   wayland.windowManager.sway = {

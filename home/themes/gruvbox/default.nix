@@ -9,7 +9,7 @@
     gtk.enable = true;
     x11.enable = true;
   };
-  
+
   # GTK
   gtk = {
     enable = true;
@@ -28,7 +28,7 @@
     names = [ "monospace" ];
     size = 10.0;
   };
-  
+
   # Foot
   programs.foot.settings = {
     main = {
@@ -65,7 +65,7 @@
     themes = {
       gruvbox_dark_hard_transparent = {
         inherits = "gruvbox_dark_hard";
-        "ui.background" = {};
+        "ui.background" = { };
       };
     };
   };
@@ -79,16 +79,18 @@
 
   # Firefox
   programs.firefox.policies = {
-    ExtensionSettings = let
-      extension = shortId: uuid: {
-        name = uuid;
-        value = {
-          install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
-          installation_mode = "force_installed";
+    ExtensionSettings =
+      let
+        extension = shortId: uuid: {
+          name = uuid;
+          value = {
+            install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+            installation_mode = "force_installed";
+          };
         };
-      };
-    in builtins.listToAttrs [
-      (extension "gruvbox-dark-theme" "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}")
-    ];
+      in
+      builtins.listToAttrs [
+        (extension "gruvbox-dark-theme" "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}")
+      ];
   };
 }

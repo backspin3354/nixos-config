@@ -30,6 +30,15 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+    xfce.thunar
+    xfce.thunar-volman
+  ];
+
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+
   # Set environment variables on login.
   environment.sessionVariables = {
     NIXOS_OZONE_WL = 1; # Lets electron apps run on wayland.
@@ -57,7 +66,12 @@
       noto-fonts-emoji
 
       # Nerdfonts.
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "JetBrainsMono"
+        ];
+      })
     ];
 
     # Only install the specified fonts.
@@ -65,13 +79,21 @@
 
     # Set the default fonts.
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+      serif = [
+        "Noto Serif"
+        "Noto Color Emoji"
+      ];
+      sansSerif = [
+        "Noto Sans"
+        "Noto Color Emoji"
+      ];
+      monospace = [
+        "JetBrainsMono Nerd Font"
+        "Noto Color Emoji"
+      ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
-
 
   # Install `polkit`.
   security.polkit.enable = true;
